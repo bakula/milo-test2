@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('test2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngRoute'])
+angular.module('test2', [ 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
