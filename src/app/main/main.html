@@ -5,8 +5,9 @@
   <div class="jumbotron text-center">
 	  <h1>ToDo</h1>
 	  <form ng-submit="addRow()">
-		<input id="addRow" type="text" class="form-control" placeholder="What needs to be done?" ng-model="newRow"\>
+		<input id="addRow" type="text" class="form-control" placeholder="What needs to be done?" ng-model="newRow" test2-escape="clearInput()"\>
 	  </form>
+	  <button class="btn btn-danger " ng-click="removeAllDone()" ng-show="anyDone">remove all done</button>
   </div>
 
 	<section class="list-group" id="list">
@@ -16,7 +17,7 @@
 			<span class="col-lg-2 col-xs-12 text-right">
 				<button class="btn btn-primary btn-xs" ng-click="done(row)" ng-show="!row.done">done</button>
 				<button class="btn btn-info btn-xs" ng-click="undone(row)" ng-show="row.done">undone</button>
-				<button class="btn btn-danger btn-xs" ng-click="cancel(row)">cancel</button>
+				<button class="btn btn-danger btn-xs" ng-click="cancel(row)">remove</button>
 			</span>
 		</div>
 	  </div>

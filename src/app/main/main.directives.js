@@ -8,7 +8,7 @@ angular.module('test2')
 		return function (scope, elem, attrs) {
 			elem.bind('keydown', function (event) {
 				if (event.keyCode === 27) {
-					scope.$apply(attrs.todoEscape);
+					scope.$apply(attrs.test2Escape);
 				}
 			});
 		};
