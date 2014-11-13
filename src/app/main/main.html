@@ -5,12 +5,12 @@
   <div class="jumbotron text-center">
 	  <h1>ToDo</h1>
 	  <form ng-submit="addRow()">
-		<input type="text" class="form-control" placeholder="What needs to be done?" ng-model="newRow"\>
+		<input id="addRow" type="text" class="form-control" placeholder="What needs to be done?" ng-model="newRow"\>
 	  </form>
   </div>
 
-	<section class="list-group" >
-	  <div class="list-group-item "  ng-repeat="row in rows | filter:statusFilter track by $index">
+	<section class="list-group" id="list">
+	  <div  class="list-group-item"  ng-repeat="row in rows">
 		<div class="row">
 			<span class="col-lg-10 col-xs-12" ng-class="{done:row.done}">{{row.txt}}</span>
 			<span class="col-lg-2 col-xs-12 text-right">
@@ -18,7 +18,7 @@
 				<button class="btn btn-info btn-xs" ng-click="undone(row)" ng-show="row.done">undone</button>
 				<button class="btn btn-danger btn-xs" ng-click="cancel(row)">cancel</button>
 			</span>
-			</div>
+		</div>
 	  </div>
 	</section>
   <hr>

@@ -48,4 +48,20 @@ describe('controllers', function(){
 	expect(before===scope.rows.length+1).toBeTruthy();
 	expect(scope.rows[0].txt==="aaa").toBeTruthy();
   }));
+  it('should done selected rows', inject(function($controller) {
+
+    $controller('MainCtrl', {
+      $scope: scope
+  	});
+    scope.newRow = "aaa";
+	scope.addRow();
+	scope.newRow = "aaa1";
+	scope.addRow();	
+	scope.done(scope.rows[0]);
+	expect(scope.rows[0].done).toBeTruthy();
+	scope.done(scope.rows[1]);
+	expect(scope.rows[1].done).toBeTruthy();
+	scope.undone(scope.rows[1]);
+	expect(!scope.rows[1].done).toBeTruthy();
+  }));
 });
